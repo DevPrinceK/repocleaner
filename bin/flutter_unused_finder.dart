@@ -1,14 +1,20 @@
 import 'dart:io';
 
 import 'package:args/args.dart';
-import 'package:flutter_unused_finder/src/analyzer.dart';
+
+import '../src/analyzer.dart';
 
 void main(List<String> arguments) async {
   final parser = ArgParser()
-    ..addFlag('help', abbr: 'h', negatable: false, help: 'Show usage information')
-    ..addOption('project', abbr: 'p', help: 'Path to the Flutter project root', defaultsTo: '.')
-    ..addFlag('include-generated', help: 'Include generated files (e.g. *.g.dart) in reports', defaultsTo: false)
-    ..addMultiOption('exclude', help: 'Glob(s) to exclude (relative to project root). Can be repeated.')
+    ..addFlag('help',
+        abbr: 'h', negatable: false, help: 'Show usage information')
+    ..addOption('project',
+        abbr: 'p', help: 'Path to the Flutter project root', defaultsTo: '.')
+    ..addFlag('include-generated',
+        help: 'Include generated files (e.g. *.g.dart) in reports',
+        defaultsTo: false)
+    ..addMultiOption('exclude',
+        help: 'Glob(s) to exclude (relative to project root). Can be repeated.')
     ..addFlag('json', help: 'Output results as JSON', defaultsTo: false);
 
   final argResults = parser.parse(arguments);
