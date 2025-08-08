@@ -1,0 +1,19 @@
+name: flutter_unused_finder
+description: CLI tool to list unused Dart files in lib and unused Flutter assets.
+version: 0.1.0
+publish_to: 'none'
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  yaml: ^3.1.2
+  path: ^1.9.0
+  args: ^2.5.0
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.25.0
+
+executables:
+  flutter_unused_finder: flutter_unused_finder
